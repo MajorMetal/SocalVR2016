@@ -1,0 +1,227 @@
+// =========================
+//     Border Box Setup
+// =========================
+*,
+*:before,
+*:after{
+  box-sizing:border-box
+}
+
+
+// =========================
+//      Clearfix Setup
+// =========================
+.clearfix:before,
+.clearfix:after,
+.navbar:before,
+.navbar:after,
+.container:before,
+.container:after,
+.row:before,
+.row:after{
+	display:table;
+  content:' '
+}
+
+.clearfix:after,
+.navbar:after,
+.container:after,
+.row:after{
+	clear:both
+}
+
+
+// =========================
+// Screen Reader Only Setup
+// =========================
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  border:0;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0,0,0,0)
+}
+
+
+// =========================
+//         Body Tag
+// =========================
+body{
+  font-family:'Roboto',Arial,sans-serif;
+  font-size:14px;
+  color:#000;
+  color:rgba(#000,.75)
+}
+
+
+// =========================
+//         Main Tag
+// =========================
+.main{
+  // Updated styles for phone-sized screens
+  @include phone{
+    margin-top:56px
+  }
+
+  // Updated styles for tablet-sized screens and larger
+  @include tablet{
+    margin-top:64px
+  }
+
+  .container-full:nth-child(2){
+    @include box-shadow(0 1px 3px rgba(#000,.26), 0 -1px 3px rgba(#000,.26))
+  }
+}
+
+
+// =========================
+//          Helpers
+// =========================
+.inline-block{
+  display:inline-block
+}
+
+
+// =========================
+//         Multi-Use
+// =========================
+.banner{
+  height:100vh;
+  width:100%;
+  background-color:#000;
+  overflow:hidden;
+  z-index:0;
+
+  img{
+    display:block;
+    min-height:100%;
+    min-width:100%;
+    opacity:.8;
+  }
+
+  .text-block{
+    position:absolute;
+    right:0;
+    left:0;
+    color:#FFF;
+    color:rgba(#FFF,.9)
+  }
+
+  .button-round{
+    position:absolute;
+    right:0;
+    bottom:5%;
+    left:0;
+    margin:0 auto;
+    background-color:#FFF;
+  }
+}
+
+.container-full,
+.container{
+  position:relative;
+  background-color:#FFF;
+  z-index:50;
+
+  &.opposite{
+    color:#FFF;
+    color:rgba(#FFF,.8);
+    background-color:$gray-900;
+    z-index:75
+  }
+}
+
+.container-full{
+  padding:35px 16px;
+
+  @include desktop-sm{
+    padding:50px 16px
+  }
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto
+}
+
+.text-block{
+  margin:0 auto;
+
+  .section:not(:first-child){
+    margin-top:35px
+  }
+
+  .section{
+    h6{
+      margin-bottom:0;
+      
+      p{
+        display:inline-block
+      }
+    }
+  }
+
+  @include tablet{
+    max-width:750px
+  }
+}
+
+.image{
+  height:64px;
+  margin-top:16px;
+  margin-bottom:16px;
+  text-align:center;
+
+  img{
+    position:relative;
+    top:50%;
+    max-height:100%;
+    max-width:100%;
+    @include transform(translateY(-50%))
+  }
+}
+
+.button-round{
+  height:48px;
+  width:48px;
+  border:none;
+  border-radius:50%;
+  @include box-shadow(0 3px 9px rgba(#000,.26));
+
+  &:focus{
+    outline:none
+  }
+
+  i{
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:30px
+  }
+}
+
+.embed-container{
+  max-width:750px;
+  margin:50px auto 25px;
+}
+
+.embed{
+  position:relative;
+  display:block;
+  height:0;
+  padding:0 0 56.25% 0;
+  overflow:hidden;
+
+  iframe{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    height:100%;
+    width:100%;
+    border:0;
+  }
+}

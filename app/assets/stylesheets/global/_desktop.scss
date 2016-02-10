@@ -1,0 +1,20 @@
+@import 'global/main';
+// =========================
+//         Body Tag
+// =========================
+body{
+  // Updated styles for small desktop-sized screens and larger
+  @include desktop-sm{
+    font-size:13px
+  }
+}
+
+
+// =========================
+//        Banner Tag
+// =========================
+.banner{
+  .text-block{
+    bottom:40%;
+  }
+}

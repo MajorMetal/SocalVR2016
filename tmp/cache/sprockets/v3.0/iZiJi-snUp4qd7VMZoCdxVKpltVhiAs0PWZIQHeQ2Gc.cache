@@ -1,0 +1,67 @@
+{:uriI"˜file://app/assets/javascripts/demo.js.erb?type=application/javascript&pipeline=debug&id=ea423c439c6ec425afd3694853881a2e66bae81332a2e9e65110cfb75a7229bb:ET:load_pathI"app/assets/javascripts;T:filenameI"'app/assets/javascripts/demo.js.erb;T:	nameI"	demo;T:logical_pathI"demo.debug.js;T:content_typeI"application/javascript;T:sourceI"/var demoController = (function () {
+  var banner = document.querySelector('.banner > img'),
+      logoText = document.querySelector('.navbar-logo > p');
+
+  if (banner) {
+    var main = document.querySelector('main'),
+        navbar = document.querySelector('.navbar'),
+        logo = document.querySelector('.navbar-logo'),
+        img = logo.querySelector('img');
+
+    main.style.marginTop = '0';
+    navbar.style.backgroundColor = 'transparent';
+    navbar.style.boxShadow = 'none';
+    logo.className = 'navbar-logo white';
+    img.src = "/assets/logo-white-9df54ce014ea6a65e3807daaf2c165b00d2ddd48e6990ec227a3de3195740226.png";
+  }
+
+  function selectLogoText () {
+    var width = window.innerWidth;
+
+    if (width >= 1200) {
+      logoText.innerHTML = 'socal <span>virtual reality</span> conference & expo';
+    } else if (width >= 992) {
+      logoText.innerHTML = 'socal <span>virtual reality</span> conference';
+    } else if (width >= 768) {
+      logoText.innerHTML = 'socal <span>vr</span> conference';
+    } else {
+      logoText.innerHTML = 'socal <span>vr</span> con';
+    }
+  }
+
+  function updateBanner () {
+    var height = window.innerHeight,
+        width = window.innerWidth,
+        aspect = 3556 / 2238;
+
+    if ((width / height) < aspect) {
+      banner.style.height = height + 'px';
+      banner.style.marginTop = '';
+      banner.style.width = '';
+      banner.style.marginLeft = ((width - (aspect * height)) / 2) + 'px';
+    } else {
+      console.log(height - (width / aspect));
+      banner.style.height = '';
+      banner.style.marginTop = ((height - (width / aspect)) / 2) + 'px';
+      banner.style.width = width + 'px';
+      banner.style.marginLeft = '';
+    }
+  }
+
+  function resize () {
+    selectLogoText();
+
+    if (banner) {
+      updateBanner();
+    }
+  }
+
+  window.onresize = resize;
+  resize();
+
+});
+;T:metadata{:dependencieso:Set:
+@hash}I"environment-version;TTI"environment-paths;TTI"hprocessors:type=application/javascript&file_type=application/javascript&engines=.erb&pipeline=debug;TTI"5file-digest://app/assets/javascripts/demo.js.erb;TTI"gprocessors:type=application/javascript&file_type=application/javascript&engines=.erb&pipeline=self;TTI"&actioncontroller-asset-url-config;TTI"#file-digest://app/assets/fonts;TTI".file-digest://app/assets/fonts/logo-white;TTI"$file-digest://app/assets/images;TTI"/file-digest://app/assets/images/logo-white;TTI"3file-digest://app/assets/images/logo-white.png;TTI"2processors:type=image/png&file_type=image/png;TTF:
+linkso;;}I"file://app/assets/images/logo-white.png?type=image/png&id=30eba8f0d2a86cb0a50d5bb0e2dded9d472cc3b16286a090bb8510b1e578e46b;TTF:included[I"—file://app/assets/javascripts/demo.js.erb?type=application/javascript&pipeline=self&id=a946d5271f19f151481c9f11456bb5138f76cec7ecfd4551bac2d99ff1f66bd0;T:charsetI"
+utf-8;F:digest"%Ô#@<UN}¡›4Š¥y£¿èÓ„²ýóÑ$ø^Ò¸b:lengthi/:dependencies_digest"%¢NGZKF-w$áì74âÍ§—ÙƒT¼,ÛÂ;Ø¬ˆÃi:idI"Eea423c439c6ec425afd3694853881a2e66bae81332a2e9e65110cfb75a7229bb;F:
+mtimel+Œ.ºV

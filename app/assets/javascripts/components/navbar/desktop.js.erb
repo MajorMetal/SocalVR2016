@@ -1,0 +1,201 @@
+var navbarController = (function () {
+  var links = document.querySelectorAll('.navbar-link > a'),
+      banner = document.querySelector('.banner > img'),
+      mouseClicked;
+
+
+// =========================
+//     Banner Recoloring
+// =========================
+  function recolor () {
+    if (banner) {
+      var main = document.querySelector('main'),
+          navbar = document.querySelector('.navbar'),
+          logo = document.querySelector('.navbar-logo'),
+          img = logo.querySelector('img'),
+          hamburger = document.querySelector('.hamburger');
+
+      main.style.marginTop = '0';
+      navbar.style.backgroundColor = 'transparent';
+      navbar.style.boxShadow = 'none';
+      logo.className = 'navbar-logo white';
+      img.src = "<%= asset_path('logo-white.png') %>";
+      // hamburger.className = 'hamburger white';
+    }
+  }
+
+
+// =========================
+//       Url Selector
+// =========================
+  // Applies the active class to the current pages navbar-link
+  function activeTabSelector (url) {
+    var buttons = {
+      '/': links[0],
+      '/expo': links[1]
+    };
+
+    buttons[url].className = 'active';
+  }
+
+// =========================
+//     Element Creators
+// =========================
+  // Creates the ripple container
+  function createRippleContainer () {
+    var element = document.createElement('div');
+
+    element.className = 'ripple-container';
+
+    return element;
+  }
+
+  // Creates the ripple circle
+  function createFocusRipple (width, height) {
+    var element = document.createElement('span');
+
+    element.className = 'ripple';
+    element.style.top = '-' + (((width * 0.84) - height) / 2) + 'px';
+    element.style.left = ((width * (1 - 0.84)) / 2) + 'px';
+    element.style.height = (width * 0.84) + 'px';
+    element.style.width = (width * 0.84) + 'px';
+
+    return element;
+  }
+
+  function createClickRipple (parent, xPos, yPos) {
+    var element = document.createElement('span');
+
+    element.className = 'ripple';
+    element.style.top = (yPos - 1) + 'px';
+    element.style.left = (xPos - 1) + 'px';
+    element.style.height = '1px';
+    element.style.width = '1px';
+    element.style.opacity = '0';
+
+    return element;
+  }
+
+
+// =========================
+//    Animation Handlers
+// =========================
+  // Animation for onfocus ripple
+  function rippleFocusAnimation (element, width, height, modifier) {
+    // Only adds the next step in the animation if the button is still focused
+    if (document.activeElement === element.parentNode.parentNode) {
+      var multiplier = 1 + (width / 100),
+          // Calculates the animation delay based on button width
+          delay = 50 * multiplier,
+          // Calculates the animation duration based on button width
+          duration = 500 * multiplier,
+          // Defines attributes to be modified
+          attributes = {
+            top: '-' + (((width * modifier) - height) / 2) + 'px',
+            left: ((width * (1 - modifier)) / 2) + 'px',
+            height: (width * modifier) + 'px',
+            width: (width * modifier) + 'px'
+          },
+          // onComplete callback activates the next step in the infinite animation
+          onComplete = function () { 
+            rippleFocusAnimation(element, width, height, modifier === 0.76 ? 0.84 : 0.76);
+          };
+
+      // Declares the animation
+      $(element).delay(delay).animate(attributes, duration, onComplete);
+    }
+  }
+
+  // Animation for onclick ripple
+  function rippleClickAnimation (element, xPos, yPos, width, height) {
+    // Calculates the animation duration based on button width
+    var duration = Math.min(500, 250 * (width / 50));
+
+    // ==~~~== Ripple Animation has two parts ==~~~==
+    // Part I - Handles opacity changes and is in two steps
+    $(element).animate({
+      opacity: 0.2
+    }, {
+      duration: duration * 0.25,
+      queue: false,
+      complete: function () {
+        $(element).animate({
+          opacity: 0
+        }, duration * 0.75);
+      }
+    });
+
+    // Part II - Handles positioning of the ripple
+    $(element).animate({
+      top: (yPos - (width + height)) + 'px',
+      left: (xPos - (width + height)) + 'px',
+      height: ((width + height) * 2) + 'px',
+      width: ((width + height) * 2) + 'px'
+    }, {
+      duration: duration,
+      queue: false,
+      complete: function () {
+        mouseClicked = false;
+        element.parentNode.removeChild(element);
+      }
+    });
+  }
+
+// =========================
+//      Event Handlers
+// =========================
+  // Setup for onfocus animation
+  function onFocusHandler () {
+    // Checks to make sure there isn't a click animation currently active
+      // and the screen size is desktop-sized
+    if (!mouseClicked && document.body.clientWidth >= 992) {
+      var width = this.offsetWidth,
+          height = this.offsetHeight,
+          container = createRippleContainer(),
+          ripple = createFocusRipple(width, height);
+
+      this.style.backgroundColor = 'transparent';
+
+      container.appendChild(ripple);
+      this.appendChild(container);
+      rippleFocusAnimation(ripple, width, height, 0.76);
+    }
+  }
+
+  // Removes all components of onfocus animation
+  function onBlurHandler () {
+    var ripple = this.querySelector('.ripple-container');
+
+    if (ripple) {
+      this.removeChild(ripple);
+      this.style.backgroundColor = '';
+    }
+  }
+
+  // Setup for on click animation
+  function onMouseDownHandler (event) {
+    // Checks to make sure there isn't a click animation currently active
+      // and the screen size is desktop-sized
+    if (!mouseClicked) {
+      var xPos = event.offsetX,
+          yPos = event.offsetY
+          ripple = createClickRipple(this, xPos, yPos);
+
+      mouseClicked = true;
+      this.appendChild(ripple);
+      rippleClickAnimation(ripple, xPos, yPos, this.offsetWidth, this.offsetHeight);
+    }
+  }
+
+// =========================
+//      Event Listeners
+// =========================
+  // for (var i = 0; i < links.length; i++) {
+    // links[i].addEventListener('focus', onFocusHandler);
+    // links[i].addEventListener('blur', onBlurHandler);
+    // links[i].addEventListener('mousedown', onMouseDownHandler);
+  // }
+
+  // activeTabSelector(location.pathname);
+  // recolor();
+});

@@ -1,0 +1,10 @@
+@import 'footer/main';
+// =========================
+//        Footer Main
+// =========================
+.footer{
+  // Updated styles for phone-sized screens in landscape orientation
+  @include landscape{
+    min-height:96px
+  }
+}

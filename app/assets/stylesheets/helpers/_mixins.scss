@@ -1,0 +1,99 @@
+// =========================
+//    Media Query Mixins
+// =========================
+@mixin phone{
+  @media (max-width:($width-xs-cutoff - 1px)){
+    @content
+  }
+}
+
+@mixin landscape{
+  @media (max-width:($width-xs-cutoff - 1px)) and (orientation:landscape){
+    @content
+  }
+}
+
+@mixin tablet{
+  @media (min-width:$width-xs-cutoff){
+    @content
+  }
+}
+
+@mixin handheld{
+  @media (max-width:($width-sm-cutoff - 1px)){
+    @content
+  }
+}
+
+@mixin desktop-sm{
+	@media (min-width:$width-sm-cutoff){
+    @content
+  }
+}
+
+@mixin desktop-lg{
+  @media (min-width:$width-md-cutoff){
+    @content
+  }
+}
+
+
+// =========================
+//      Modifier Mixins
+// =========================
+@mixin transition($transition...){
+	-webkit-transition:$transition;
+          transition:$transition
+}
+
+@mixin transform($transform...){
+	-webkit-transform:$transform;
+      -ms-transform:$transform;
+          transform:$transform
+}
+
+@mixin box-shadow($box-shadow...){
+  -webkit-box-shadow:$box-shadow;
+     -moz-box-shadow:$box-shadow;
+          box-shadow:$box-shadow
+}
+
+// =========================
+//        Grid System
+// =========================
+@mixin build-columns ($size, $columns) {
+  @for $i from $columns through 0 {
+    $width: (100% / $columns) * $i;
+
+    @if $i > 0 {
+      .col-#{$size}-#{$i} {
+        width:$width
+      }
+
+      .col-#{$size}-pull-#{$i} {
+        right:$width
+      }
+
+      .col-#{$size}-push-#{$i} {
+        left:$width
+      }
+
+      .col-#{$size}-offset-#{$i} {
+        margin-left:$width
+      }
+
+    } @else {
+      .col-#{$size}-pull-#{$i} {
+        right:auto
+      }
+
+      .col-#{$size}-push-#{$i} {
+        left:auto
+      }
+
+      .col-#{$size}-offset-#{$i} {
+        margin-left:0
+      }
+    }
+  }
+}
