@@ -1,0 +1,7 @@
+@import 'structural/typography/mobile';
+
+p.subheader{
+  @include desktop-sm{
+    font-size:15px
+  }
+}

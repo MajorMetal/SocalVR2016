@@ -58,6 +58,11 @@
           box-shadow:$box-shadow
 }
 
+@mixin animation($animation...){
+  -webkit-animation:$animation;
+          animation:$animation
+}
+
 // =========================
 //        Grid System
 // =========================

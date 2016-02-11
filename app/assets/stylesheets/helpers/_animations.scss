@@ -1,0 +1,31 @@
+@keyframes footerLinkFocus {
+  from{
+    @include transform(scale(1,1))
+  }
+
+  45%{
+    @include transform(scale(.925,.925))
+  }
+
+  90%{
+    @include transform(scale(1,1))
+  }
+}
+
+@keyframes footerLinkClick {
+  from{
+    opacity:0
+  }
+
+  30%{
+    opacity:.26
+  }
+
+  to{
+    opacity:0;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%
+  }
+}

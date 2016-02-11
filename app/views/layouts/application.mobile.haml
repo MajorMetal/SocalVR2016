@@ -8,7 +8,7 @@
     = javascript_include_tag 'mobile'
     = favicon_link_tag 'favicon.ico'
 
-  %body
+  %body{ontouchstart: ''}
     = render 'layouts/partials/navbar'
     = yield
     = render 'layouts/partials/footer'

@@ -7,5 +7,5 @@ Rails.application.config.assets.version = '1.0'
 # Example: Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( mobile.js )
 Rails.application.config.assets.precompile += %w( mobile.css )
-Rails.application.config.assets.precompile += %w( demoDesktop.js )
-Rails.application.config.assets.precompile += %w( demoMobile.js )
+Rails.application.config.assets.precompile += %w( desktop.js )
+Rails.application.config.assets.precompile += %w( desktop.css )
