@@ -1,0 +1,66 @@
+@import 'navbar/main';
+
+// =========================
+//        Navbar Main
+// =========================
+.navbar{
+  // Updated styles for phone-sized screens in landscape orientation
+  @include landscape{
+    min-height:48px
+  }
+}
+
+
+// =========================
+//       Navbar Toggle
+// =========================
+// Opens the mobile navbar menu
+.navbar-toggle-open{
+  // Updated styles for phone-sized screens in landscape orientation
+  @include landscape{
+    padding:24px
+  }
+}
+
+.hamburger{
+  // Updated styles for phone-sized screens in landscape orientation
+  @include landscape{
+    top:22px
+  }
+}
+
+
+// =========================
+//        Navbar Logo
+// =========================
+.navbar-logo{
+  // Updated styles for phone-sized screens in landscape orientation
+  @include landscape{
+    &,
+    img,
+    p{
+      height:48px
+    }
+
+    img{
+      padding:4px 0
+    }
+
+    p{
+      line-height:48px
+    }
+  }
+}
+
+
+// =========================
+//       Navbar Links
+// =========================
+.navbar-link{
+  // Onfocus style updates
+  a:hover,
+  a:focus{
+    background-color:#FFF !important;
+    background-image:none
+  }
+}

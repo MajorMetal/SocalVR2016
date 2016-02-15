@@ -1,0 +1,14 @@
+!!!
+%html{lang: 'en-US'}
+  %head
+    %title SoCal VR Con
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = favicon_link_tag 'favicon.ico'
+
+  %body
+    = render 'layouts/partials/navbar'
+    = yield
+    = render 'layouts/partials/footer'

@@ -1,0 +1,43 @@
+var navbarController = (function () {
+  var links = document.querySelectorAll('.navbar-link > a'),
+      banner = document.querySelector('.banner > img'),
+      mouseClicked;
+
+
+// =========================
+//     Banner Recoloring
+// =========================
+  function recolor () {
+    if (banner) {
+      var main = document.querySelector('main'),
+          navbar = document.querySelector('.navbar'),
+          logo = document.querySelector('.navbar-logo'),
+          img = logo.querySelector('img'),
+          hamburger = document.querySelector('.hamburger');
+
+      main.style.marginTop = '0';
+      navbar.style.backgroundColor = 'transparent';
+      navbar.style.boxShadow = 'none';
+      logo.className = 'navbar-logo white';
+      img.src = "<%= asset_path('logo-white.png') %>";
+      // hamburger.className = 'hamburger white';
+    }
+  }
+
+
+// =========================
+//       Url Selector
+// =========================
+  // Applies the active class to the current pages navbar-link
+  function activeTabSelector (url) {
+    var buttons = {
+      '/': links[0],
+      '/expo': links[1]
+    };
+
+    buttons[url].className = 'active';
+  }
+
+  // activeTabSelector(location.pathname);
+  recolor();
+});

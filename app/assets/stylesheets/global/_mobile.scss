@@ -1,0 +1,20 @@
+@import 'global/main';
+// =========================
+//         Main Tag
+// =========================
+.main{
+  // Updated styles for small desktop-sized screens and larger
+  @include landscape{
+    margin-top:48px
+  }
+}
+
+
+// =========================
+//        Banner Tag
+// =========================
+.banner{
+  .text-block{
+    bottom:30%;
+  }
+}
