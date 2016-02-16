@@ -1,1 +1,0 @@
-$(window).scroll(function(){var s=$(window).scrollTop();$("[data-scroll-speed]").each(function(){var a=$(this),o=parseInt(a.data("scroll-speed")),r=s/o;a.css("transform","translateY("+r+"px)")})});
