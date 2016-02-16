@@ -1,3 +1,6 @@
+// =========================
+//     Footer Animations
+// =========================
 @keyframes footerLinkFocus {
   from{
     @include transform(scale(1,1))
@@ -27,5 +30,44 @@
     left:0;
     height:100%;
     width:100%
+  }
+}
+
+
+// =========================
+//     Navbar Animations
+// =========================
+@keyframes navbarLinkFocus {
+  from{
+    left:13px;
+    width:234px
+  }
+
+  47.5%{
+    left:20px;
+    width:220px
+  }
+
+  95%{
+    left:13px;
+    width:234px
+  }
+}
+
+@keyframes navbarLinkClick {
+  from{
+    opacity:0
+  }
+
+  30%{
+    opacity:.26
+  }
+
+  to{
+    opacity:0;
+    top:-126px;
+    left:-20px;
+    height:300px;
+    width:300px
   }
 }

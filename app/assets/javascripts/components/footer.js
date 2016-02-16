@@ -21,7 +21,6 @@ var footerController = (function () {
 //      Event Handlers
 // =========================
   function onMouseDownHandler (event) {
-    // If there is not a current click animation going
     if (!mouseClicked) {
       var self = this,
           ripple = createRipple(event.offsetX, event.offsetY);

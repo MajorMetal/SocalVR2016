@@ -1,5 +1,7 @@
 %main.main
-  .container-full
+  .banner
+    %img{src: asset_path('sunset.jpg')}
+
     .text-block
       .section.text-center
         %h3 Summer Expo
@@ -7,6 +9,7 @@
         %h6 Institute for Innovation, <span class='inline-block'>University of California Irvine</span>
         %h6 5141 California Ave. Irvine, CA
 
+  .container-full
     .embed-container
       .embed
         %iframe{src: 'https://www.youtube.com/embed/c3MKdvbRF1I', allowfullscreen: 'true'}

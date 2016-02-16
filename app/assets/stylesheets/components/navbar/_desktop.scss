@@ -1,47 +1,10 @@
 @import 'components/navbar/main';
 
-// =========================
-//        Navbar Logo
-// =========================
-.navbar-logo{
-  @include desktop-sm{
-    p{
-      padding-right:20px
-    }
-  }
-}
-
-
-// =========================
-//        Navbar Menu
-// =========================
-.navbar-menu{
-  // Link ripple animation styles
-  .ripple-container{
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    z-index:-1
-  }
-
-  .ripple{
-    background-color:$gray-400
-  }
-}
-
-
-// =========================
-//       Navbar Links
-// =========================
-.navbar-link{
-  a:hover{
-    background-color:$gray-100
-  }
-
-  // Onfocus style updates
-  a:focus{
-    background-color:$gray-100
+@include desktop-sm{
+  // =========================
+  //           Logo
+  // =========================
+  .navbar-logo p{
+    padding-right:16px
   }
 }

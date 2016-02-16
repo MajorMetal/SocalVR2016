@@ -1,41 +1,27 @@
 @import 'components/navbar/main';
 
-// =========================
-//        Navbar Main
-// =========================
-.navbar{
-  // Updated styles for phone-sized screens in landscape orientation
-  @include landscape{
-    min-height:48px
+@include landscape{
+  .navbar{
+    height:48px
   }
-}
 
 
-// =========================
-//       Navbar Toggle
-// =========================
-// Opens the mobile navbar menu
-.navbar-toggle-open{
-  // Updated styles for phone-sized screens in landscape orientation
-  @include landscape{
+  // =========================
+  //       Navbar Toggle
+  // =========================
+  .navbar-toggle-open{
     padding:24px
   }
-}
 
-.hamburger{
-  // Updated styles for phone-sized screens in landscape orientation
-  @include landscape{
+  .hamburger{
     top:22px
   }
-}
 
 
-// =========================
-//        Navbar Logo
-// =========================
-.navbar-logo{
-  // Updated styles for phone-sized screens in landscape orientation
-  @include landscape{
+  // =========================
+  //           Logo
+  // =========================
+  .navbar-logo{
     &,
     img,
     p{
@@ -49,18 +35,5 @@
     p{
       line-height:48px
     }
-  }
-}
-
-
-// =========================
-//       Navbar Links
-// =========================
-.navbar-link{
-  // Onfocus style updates
-  a:hover,
-  a:focus{
-    background-color:#FFF !important;
-    background-image:none
   }
 }
