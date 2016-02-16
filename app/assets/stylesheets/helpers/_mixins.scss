@@ -58,10 +58,15 @@
           box-shadow:$box-shadow
 }
 
+@mixin animation($animation...){
+  -webkit-animation:$animation;
+          animation:$animation
+}
+
 // =========================
 //        Grid System
 // =========================
-@mixin build-columns ($size, $columns) {
+@mixin build-columns($size, $columns){
   @for $i from $columns through 0 {
     $width: (100% / $columns) * $i;
 
@@ -95,5 +100,44 @@
         margin-left:0
       }
     }
+  }
+}
+
+// =========================
+//        Grid System
+// =========================
+@mixin hamburger(){
+  &,
+  &:before,
+  &:after{
+    display:block;
+    position:absolute;
+    height:3px;
+    width:24px;
+    background-color:#000;
+    background-color:rgba(#000,.75)
+  }
+
+  &{
+    top:26px;
+    left:16px;
+
+    @include tablet{
+      top:30px;
+      left:18px
+    }
+  }
+
+  &:before,
+  &:after{
+    content:''
+  }
+
+  &:before{
+    top:-6px
+  }
+
+  &:after{
+    top:6px
   }
 }

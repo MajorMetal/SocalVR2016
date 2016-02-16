@@ -16,14 +16,14 @@
 @import 'helpers/mixins';
 
 // =========================
-//      Core Stylesheets
+//        Structural
 // =========================
-@import 'typography/mobile';
-@import 'grid/mobile';
+@import 'structural/typography/mobile';
+@import 'structural/grid/mobile';
 
 // =========================
-//    Mobile Stylesheets
+//        Components
 // =========================
 @import 'global/mobile';
-@import 'navbar/mobile';
-@import 'footer/mobile';
+@import 'components/navbar/mobile';
+@import 'components/footer/mobile';

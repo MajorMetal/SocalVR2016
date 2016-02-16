@@ -1,0 +1,106 @@
+var navbarController = (function () {
+  var links = document.querySelectorAll('.navbar-menu > ul > li > a'),
+      banner = document.querySelector('.banner'),
+      mouseClicked;
+
+
+// =========================
+//   Active Page Selector
+// =========================
+  function activePageSelector (path) {
+    var buttons = {
+      '/': links[0],
+      '/expo': links[1]
+    };
+
+    buttons[path].className = 'active';
+  }
+
+
+// =========================
+//     Banner Recoloring
+// =========================
+  function bannerRecolor () {
+    if (banner) {
+      var main = document.querySelector('main'),
+          navbar = document.querySelector('.navbar'),
+          img = navbar.querySelector('.navbar-logo > img');
+
+      main.style.marginTop = '0';
+      navbar.className = 'navbar navbar-banner';
+      img.src = "<%= asset_path('logo-white.png') %>";
+    }
+  }
+
+
+// =========================
+//     Element Creators
+// =========================
+  function createRippleContainer () {
+    var element = document.createElement('div');
+
+    element.className = 'ripple-container';
+
+    return element;
+  }
+
+  function createRipple (yPos, xPos) {
+    var element = document.createElement('span');
+
+    element.className = 'ripple';
+    element.style.top = yPos ? (yPos + 'px') : '';
+    element.style.left = xPos ? (xPos + 'px') : '';
+
+    return element;
+  }
+
+
+// =========================
+//      Event Handlers
+// =========================
+  function onFocusHandler () {
+    if (!mouseClicked) {
+      var container = createRippleContainer(),
+          ripple = createRipple();
+
+      container.appendChild(ripple);
+      this.appendChild(container);
+    }
+  }
+
+  function onBlurHandler () {
+    var ripple = this.querySelector('.ripple-container');
+
+    if (ripple) {
+      this.removeChild(ripple);
+    }
+  }
+
+  function onMouseDownHandler (event) {
+    if (!mouseClicked) {
+      var self = this,
+          ripple = createRipple(event.offsetX, event.offsetY);
+
+      mouseClicked = true;
+      self.appendChild(ripple);
+
+      setTimeout(function () {
+        self.removeChild(ripple);
+        mouseClicked = false;
+      }, 500);
+    }
+  }
+
+
+// =========================
+//      Event Listeners
+// =========================
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('focus', onFocusHandler);
+    links[i].addEventListener('blur', onBlurHandler);
+    links[i].addEventListener('mousedown', onMouseDownHandler);
+  }
+
+  activePageSelector(location.pathname);
+  bannerRecolor();
+});

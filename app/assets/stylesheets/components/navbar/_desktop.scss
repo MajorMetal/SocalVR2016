@@ -1,0 +1,10 @@
+@import 'components/navbar/main';
+
+@include desktop-sm{
+  // =========================
+  //           Logo
+  // =========================
+  .navbar-logo p{
+    padding-right:16px
+  }
+}

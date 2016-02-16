@@ -1,6 +1,6 @@
 resizeController = (function () {
   var banner = document.querySelector('.banner > img'),
-      logoText = document.querySelector('.navbar-logo > p');
+      logoText = document.querySelector('.navbar > .navbar-logo > p');
 
 
 // =========================

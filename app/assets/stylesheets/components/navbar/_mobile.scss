@@ -1,0 +1,39 @@
+@import 'components/navbar/main';
+
+@include landscape{
+  .navbar{
+    height:48px
+  }
+
+
+  // =========================
+  //       Navbar Toggle
+  // =========================
+  .navbar-toggle-open{
+    padding:24px
+  }
+
+  .hamburger{
+    top:22px
+  }
+
+
+  // =========================
+  //           Logo
+  // =========================
+  .navbar-logo{
+    &,
+    img,
+    p{
+      height:48px
+    }
+
+    img{
+      padding:4px 0
+    }
+
+    p{
+      line-height:48px
+    }
+  }
+}

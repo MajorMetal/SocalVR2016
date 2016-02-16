@@ -1,0 +1,139 @@
+.footer{
+  position:relative;
+  width:100%;
+  padding:0 16px;
+  text-align:center;
+  z-index:25;
+
+  // =========================
+  //        Footer Menu
+  // =========================
+  ul{
+    display:inline-block;
+    list-style-type:none;
+    height:56px;
+    margin:0;
+    margin-top:14px;
+    padding-left:0;
+
+    @include tablet{
+      height:64px;
+      margin-top:16px
+    }
+
+    li{
+      float:left
+    }
+
+    a{
+      position:relative;
+      float:left;
+      margin:4px 1px;
+      border-radius:50%;
+      font-size:30px;
+      text-decoration:none;
+      overflow:hidden;
+      -webkit-tap-highlight-color:transparent;
+
+      &:focus{
+        outline:0;
+        @include animation(footerLinkFocus 1.5s ease-in-out 0s infinite normal both)
+      }
+
+      &:active{
+        background-color:transparent !important;
+
+        .ripple{
+          @include animation(footerLinkClick .5s)
+        }
+      }
+
+      @include tablet{
+        margin:8px 2px
+      }
+    }
+  }
+
+  p{
+    text-align:center;
+    height:56px;
+    line-height:56px;
+    margin-bottom:8px;
+    color:$gray-900;
+    color:rgba($gray-900,.75);
+
+    @include tablet{
+      height:64px;
+      line-height:64px;
+      margin-bottom:16px
+    }
+  }
+
+  // =========================
+  //        Link Ripple
+  // =========================  
+  .ripple{
+    position:absolute;
+    height:1px;
+    width:1px;
+    border-radius:50%;
+    opacity:0
+  }
+
+  // =========================
+  //    Link Brand Coloring
+  // =========================
+  .fa:before{
+    position:relative
+  }
+
+  .fa-twitter{
+    color:$twitter;
+
+    &:before{
+      top:1px;
+      left:1px
+    }
+
+    &:focus{
+      background-color:rgba($twitter,.26)
+    }
+
+    .ripple{
+      background-color:$twitter
+    }
+  }
+
+  .fa-envelope{
+    color:#000;
+    color:rgba(#000,.75);
+
+    &:before{
+      left:1px
+    }
+
+    &:focus{
+      background-color:rgba(#000,.2)
+    }
+
+    .ripple{
+      background-color:#000
+    }
+  }
+
+  .fa-facebook{
+    color:$facebook;
+
+    &:before{
+      top:2px
+    }
+
+    &:focus{
+      background-color:rgba($facebook,.26)
+    }
+
+    .ripple{
+      background-color:$facebook
+    }
+  }
+}

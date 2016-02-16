@@ -1,4 +1,22 @@
 %nav.navbar
-  .navbar-logo
-    %img{src: asset_path('logo-black.png')}
-    %p socal <span>vr</span> con
+  %input.navbar-toggle#navbar-toggle{type: 'checkbox'}
+  %label.navbar-toggle-open{for: 'navbar-toggle'}
+    .hamburger
+  %label.navbar-toggle-close{for: 'navbar-toggle'}
+  %label.sr-only Toggle navigation
+
+  = render 'layouts/partials/logo'
+  .navbar-menu
+    = render 'layouts/partials/logo'
+
+    %ul.navbar-nav
+      %li.navbar-link= link_to 'Home', root_path
+      %li.navbar-link= link_to 'Expo', expo_path
+      %li.navbar-link= link_to 'Maps', maps_path
+      %li.navbar-link= link_to 'Exhibitors', exhibitors_path
+      %li.navbar-link= link_to 'Speakers', speakers_path
+      %li.navbar-link= link_to 'Sponsors', sponsors_path
+      %li.navbar-link= link_to 'Team', workers_path
+      %li.navbar-link
+        %a{href: 'https://www.eventbrite.com/e/the-socal-virtual-reality-conference-expo-tickets-17219851038', target: '_blank'}
+          Register

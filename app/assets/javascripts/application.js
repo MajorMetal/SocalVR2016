@@ -3,7 +3,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require components/navbar/desktop
+//= require components/navbar
 //= require components/footer
 //= require components/resize/desktop
 //= require components/parallax
