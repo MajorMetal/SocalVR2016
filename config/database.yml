@@ -8,15 +8,15 @@ default: &default
 
 development:
   <<: *default
-  database: socalvr_development
+  database: socalvrcon_2016_development
   port: 5432
 
 test:
   <<: *default
-  database: socalvr_test
+  database: socalvrcon_2016_test
 
 production:
   <<: *default
-  database: socalvr_production
-  username: socalvr
-  password: <%= ENV['SOCALVRSITE_DATABASE_PASSWORD'] %>
+  database: socalvrcon_2016_production
+  username: socalvrcon_2016
+  password: <%= ENV['SOCALVRCON_2016SITE_DATABASE_PASSWORD'] %>
