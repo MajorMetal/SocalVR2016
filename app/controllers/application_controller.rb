@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	include ActiveDevice
+	# include ActiveDevice
 	
   protect_from_forgery with: :exception
 
