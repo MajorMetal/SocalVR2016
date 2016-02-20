@@ -1,17 +1,63 @@
+/*=========================
+      Alfa Slab One
+=========================*/
 @font-face {
-  font-family:'Roboto';
+  font-family:'Alfa Slab One';
+  src:font-url('AlfaSlabOne-Regular.ttf');
+  font-weight:400;
+  font-style:normal
+}
+
+
+/*=========================
+          Raleway
+=========================*/
+@font-face {
+  font-family:'Raleway';
+  src:font-url('Roboto-Light.ttf');
+  font-weight:300;
+  font-style:normal
+}
+
+@font-face {
+  font-family:'Raleway';
+  src:font-url('Roboto-LightItalic.ttf');
+  font-weight:300;
+  font-style:italic
+}
+
+@font-face {
+  font-family:'Raleway';
   src:font-url('Roboto-Regular.ttf');
   font-weight:400;
   font-style:normal
 }
 
 @font-face {
-  font-family:'Roboto';
+  font-family:'Raleway';
   src:font-url('Roboto-Italic.ttf');
   font-weight:400;
   font-style:italic
 }
 
+@font-face {
+  font-family:'Raleway';
+  src:font-url('Roboto-Medium.ttf');
+  font-weight:500;
+  font-style:normal
+}
+
+@font-face {
+  font-family:'Raleway';
+  src:font-url('Roboto-MediumItalic.ttf');
+  font-weight:500;
+  font-style:italic
+}
+
+
+/*=========================
+          Roboto
+=========================*/
 @font-face {
   font-family:'Roboto';
   src:font-url('Roboto-Light.ttf');
@@ -23,6 +69,20 @@
   font-family:'Roboto';
   src:font-url('Roboto-LightItalic.ttf');
   font-weight:300;
+  font-style:italic
+}
+
+@font-face {
+  font-family:'Roboto';
+  src:font-url('Roboto-Regular.ttf');
+  font-weight:400;
+  font-style:normal
+}
+
+@font-face {
+  font-family:'Roboto';
+  src:font-url('Roboto-Italic.ttf');
+  font-weight:400;
   font-style:italic
 }
 
@@ -40,9 +100,3 @@
   font-style:italic
 }
 
-@font-face {
-  font-family:'Alfa Slab One';
-  src:font-url('AlfaSlabOne-Regular.ttf');
-  font-weight:400;
-  font-style:normal
-}
