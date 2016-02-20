@@ -28,7 +28,7 @@ gem 'font-awesome-sass', '~> 4.5.0'
 # 		 		Utility Gems
 # ==============================
 gem 'haml', '~> 4.0', '>= 4.0.7'
-# gem 'active_device', '~> 1.2'
+gem 'active_device', '~> 1.2'
 
 
 # ==============================
