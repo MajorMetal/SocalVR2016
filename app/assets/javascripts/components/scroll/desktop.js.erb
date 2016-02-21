@@ -6,21 +6,6 @@ var scrollController = (function () {
       fab,
       content;
 
-  function adjustBannerFab (height) {
-    var opacity = 1 - (body.scrollTop / (height * 0.05));
-
-    if (opacity >= 1) {
-      fab.style.opacity = '1';
-      fab.style.display = '';
-    } else if (opacity <= 0) {
-      fab.style.opacity = '0';
-      fab.style.display = 'none';
-    } else {
-      fab.style.opacity = opacity;
-      fab.style.display = '';
-    }
-  }
-
   function swapNavbarDisplay (height) {
     var bodyTop = body.scrollTop,
         navHeight = navbar.clientHeight;
@@ -59,7 +44,6 @@ var scrollController = (function () {
   }
 
   if (banner) {
-    fab = banner.querySelector('.banner > .button-round');
     content = document.getElementById('content');
   }
 
