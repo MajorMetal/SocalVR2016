@@ -26,7 +26,7 @@ var navbarController = (function () {
           navbar = document.querySelector('.navbar'),
           img = navbar.querySelector('.navbar-logo > img');
 
-      main.style.marginTop = '0';
+      main.style.paddingTop = '0';
       navbar.className = 'navbar navbar-banner';
       img.src = "<%= asset_path('logo-white.png') %>";
     }
@@ -44,12 +44,29 @@ var navbarController = (function () {
     return element;
   }
 
-  function createRipple (yPos, xPos) {
+  function createFocusRipple (height, width) {
+    var element = document.createElement('span'),
+        rippleWidth = width * 0.9;
+
+    element.className = 'ripple focus';
+    element.style.top = ((height - rippleWidth) / 2) + 'px';
+    element.style.left = '5%';
+    element.style.height = rippleWidth + 'px';
+    element.style.width = rippleWidth + 'px';
+    element.style.backgroundColor = '#EEEEEE';
+
+    return element;
+  }
+
+  function createClickRipple (yPos, xPos, width) {
     var element = document.createElement('span');
 
-    element.className = 'ripple';
-    element.style.top = yPos ? (yPos + 'px') : '';
-    element.style.left = xPos ? (xPos + 'px') : '';
+    element.className = 'ripple click';
+    element.style.top = (yPos - (width / 2)) + 'px';
+    element.style.left = (xPos - (width / 2)) + 'px';
+    element.style.height = width + 'px';
+    element.style.width = width + 'px';
+    element.style.backgroundColor = '#BDBDBD';
 
     return element;
   }
@@ -61,7 +78,7 @@ var navbarController = (function () {
   function onFocusHandler () {
     if (!mouseClicked) {
       var container = createRippleContainer(),
-          ripple = createRipple();
+          ripple = createFocusRipple(this.clientHeight, this.clientWidth);
 
       container.appendChild(ripple);
       this.appendChild(container);
@@ -79,7 +96,7 @@ var navbarController = (function () {
   function onMouseDownHandler (event) {
     if (!mouseClicked) {
       var self = this,
-          ripple = createRipple(event.offsetX, event.offsetY);
+          ripple = createClickRipple(event.offsetY, event.offsetX, (this.clientHeight + this.clientWidth));
 
       mouseClicked = true;
       self.appendChild(ripple);
@@ -87,7 +104,7 @@ var navbarController = (function () {
       setTimeout(function () {
         self.removeChild(ripple);
         mouseClicked = false;
-      }, 500);
+      }, 700);
     }
   }
 

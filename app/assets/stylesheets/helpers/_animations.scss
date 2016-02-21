@@ -1,73 +1,46 @@
 // =========================
-//     Footer Animations
+//      Link Animations
 // =========================
-@keyframes footerLinkFocus {
+@keyframes buttonClick{
+  from{
+    opacity:0;
+    @include transform(scale(0,0))
+  }
+
+  30%{
+    opacity:.26
+  }
+
+  to{
+    opacity:0;
+    @include transform(scale(1,1))
+  }
+}
+
+@keyframes buttonFocus{
   from{
     @include transform(scale(1,1))
   }
 
-  45%{
+  50%{
+    @include transform(scale(.95,1))
+  }
+
+  to{
+    @include transform(scale(1,1))
+  }
+}
+
+@keyframes roundButtonFocus{
+  from{
+    @include transform(scale(1,1))
+  }
+
+  50%{
     @include transform(scale(.925,.925))
   }
 
-  90%{
+  to{
     @include transform(scale(1,1))
-  }
-}
-
-@keyframes footerLinkClick {
-  from{
-    opacity:0
-  }
-
-  30%{
-    opacity:.26
-  }
-
-  to{
-    opacity:0;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%
-  }
-}
-
-
-// =========================
-//     Navbar Animations
-// =========================
-@keyframes navbarLinkFocus {
-  from{
-    left:13px;
-    width:234px
-  }
-
-  47.5%{
-    left:20px;
-    width:220px
-  }
-
-  95%{
-    left:13px;
-    width:234px
-  }
-}
-
-@keyframes navbarLinkClick {
-  from{
-    opacity:0
-  }
-
-  30%{
-    opacity:.26
-  }
-
-  to{
-    opacity:0;
-    top:-126px;
-    left:-20px;
-    height:300px;
-    width:300px
   }
 }

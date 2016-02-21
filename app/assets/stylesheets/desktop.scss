@@ -5,6 +5,7 @@
 //    Vendor Stylesheets
 // =========================
 @import 'normalize';
+@import 'font-awesome-sprockets';
 @import 'font-awesome';
 
 // =========================
@@ -26,4 +27,6 @@
 // =========================
 @import 'global/desktop';
 @import 'components/navbar/desktop';
+@import 'components/banner/desktop';
+@import 'components/container/desktop';
 @import 'components/footer/desktop';

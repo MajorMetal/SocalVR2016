@@ -1,0 +1,69 @@
+var scrollController = (function () {
+  var body = document.body,
+      banner = document.querySelector('.banner'),
+      navbar = document.querySelector('.navbar'),
+      img = navbar.querySelector('.navbar-logo > img'),
+      fab,
+      content;
+
+  function adjustBannerFab (height) {
+    var opacity = 1 - (body.scrollTop / (height * 0.05));
+
+    if (opacity >= 1) {
+      fab.style.opacity = '1';
+      fab.style.display = '';
+    } else if (opacity <= 0) {
+      fab.style.opacity = '0';
+      fab.style.display = 'none';
+    } else {
+      fab.style.opacity = opacity;
+      fab.style.display = '';
+    }
+  }
+
+  function swapNavbarDisplay (height) {
+    var bodyTop = body.scrollTop,
+        navHeight = navbar.clientHeight;
+
+    if (!banner) {
+      navbar.style.position = bodyTop > 0 ? 'fixed' : '';
+    } else if (bodyTop < height) {
+      navbar.className = 'navbar navbar-banner';
+      navbar.style.position = '';
+      navbar.style.top = '';
+      content.style.marginTop = '';
+      img.src = "<%= asset_path('logo-white.png') %>";
+    } else {
+      navbar.className = 'navbar';
+      navbar.style.position = 'fixed';
+      img.src = "<%= asset_path('logo-black.png') %>";
+
+      if (bodyTop < (height + navHeight)) {
+        navbar.style.top = ((bodyTop + navHeight) - (height + navHeight) - navHeight) + 'px';
+        content.style.marginTop = ((((bodyTop + navHeight) - (height + navHeight)) * 2) + 8) + 'px';
+      } else {
+        navbar.style.top = '';
+        content.style.marginTop = '';
+      }
+    }
+  }
+
+  function whenScrolled () {
+    var height = window.innerHeight;
+
+    if (fab) {
+      adjustBannerFab(height);
+    }
+
+    swapNavbarDisplay(height);
+  }
+
+  if (banner) {
+    fab = banner.querySelector('.banner > .button-round');
+    content = document.getElementById('content');
+  }
+
+  window.onscroll = whenScrolled;
+  whenScrolled();
+
+});

@@ -6,12 +6,14 @@ var footerController = (function () {
 // =========================
 //     Element Creators
 // =========================
-  function createRipple (xPos, yPos) {
+  function createRipple (xPos, yPos, width) {
     var element = document.createElement('span');
 
     element.className = 'ripple';
-    element.style.top = yPos + 'px';
-    element.style.left = xPos + 'px';
+    element.style.top = (yPos - (width / 2)) + 'px';
+    element.style.left = (xPos - (width / 2)) + 'px';
+    element.style.height = width + 'px';
+    element.style.width = width + 'px';
 
     return element;
   }
@@ -23,7 +25,7 @@ var footerController = (function () {
   function onMouseDownHandler (event) {
     if (!mouseClicked) {
       var self = this,
-          ripple = createRipple(event.offsetX, event.offsetY);
+          ripple = createRipple(event.offsetX, event.offsetY, (this.clientHeight + this.clientWidth));
 
       mouseClicked = true;
       self.appendChild(ripple);

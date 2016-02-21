@@ -15,9 +15,9 @@
 }
 
 
-// =========================
-//       Menu Toggle
-// =========================
+/*=========================
+       Menu Toggle
+=========================*/
 .navbar-toggle{
   display:none
 }
@@ -58,9 +58,9 @@
 }
 
 
-// =========================
-//           Logo
-// =========================
+/*=========================
+           Logo
+=========================*/
 .navbar-logo{
   @include transition(opacity .3s cubic-bezier(.4,0,.2,1));
 
@@ -117,9 +117,9 @@
 }
 
 
-// =========================
-//           Menu
-// =========================
+/*=========================
+           Menu
+=========================*/
 .navbar-menu{
   position:fixed;
   top:0;
@@ -176,18 +176,36 @@
   }
 
 
-  // =========================
-  //        Link Ripple
-  // =========================  
+  /*=========================
+         Link Ripples
+  =========================*/
+  .ripple-container{
+    position:absolute;
+    top:0;
+    left:0;
+    height:48px;
+    width:260px;
+    background-color:$gray-300;
+    z-index:-1
+  }
+
   .ripple{
     position:absolute;
-    border-radius:50%
+    border-radius:50%;
+
+    &.click{
+      @include animation(buttonClick .7s)
+    }
+
+    &.focus{
+      @include animation(buttonFocus 2s ease-in-out 0s infinite normal both)
+    }
   }
 
 
-  // =========================
-  //           List
-  // =========================
+  /*=========================
+             List
+  =========================*/
   ul{
     list-style-type:none;
     margin:0;
@@ -215,40 +233,13 @@
           color:rgba($orange-accent-400,.75)
         }
 
-        &:active .ripple{
-          height:1px;
-          width:1px;
-          background-color:$gray-400;
-          opacity:0;
-          @include animation(navbarLinkClick .7s)
-        }
-
         &:hover{
           background-color:$gray-100
         }
 
         &:focus{
           outline:none;
-          background-color:transparent;
-
-          .ripple-container{
-            position:absolute;
-            top:0;
-            left:0;
-            height:48px;
-            width:260px;
-            background-color:$gray-200;
-            z-index:-1
-          }
-
-          .ripple{
-            top:-93px;
-            left:13px;
-            height:234px;
-            width:234px;
-            background-color:$gray-100;
-            @include animation(navbarLinkFocus 2s ease-in-out 0s infinite normal both)
-          }
+          background-color:transparent
         }
       }
     }
@@ -256,9 +247,9 @@
 }
 
 
-// =========================
-//       Banner Navbar
-// =========================
+/*=========================
+       Banner Navbar
+=========================*/
 .navbar.navbar-banner{
   background-color:transparent;
   @include box-shadow(none);

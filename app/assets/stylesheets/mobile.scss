@@ -15,6 +15,7 @@
 @import 'helpers/fonts';
 @import 'helpers/variables';
 @import 'helpers/mixins';
+@import 'helpers/animations';
 
 // =========================
 //        Structural
@@ -27,4 +28,6 @@
 // =========================
 @import 'global/mobile';
 @import 'components/navbar/mobile';
+@import 'components/banner/mobile';
+@import 'components/container/desktop';
 @import 'components/footer/mobile';

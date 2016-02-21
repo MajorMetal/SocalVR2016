@@ -21,24 +21,25 @@ var resizeController = (function () {
         width = window.screen.width,
         aspect = 3556 / 2238;
 
-    if (banner) {
-      if ((width / height) < aspect) {
-        banner.style.height = height + 'px';
-        banner.style.marginTop = '';
-        banner.style.width = '';
-        banner.style.marginLeft = ((width - (aspect * height)) / 2) + 'px';
-      } else {
-        banner.style.height = '';
-        banner.style.marginTop = ((height - (width / aspect)) / 2) + 'px';
-        banner.style.width = width + 'px';
-        banner.style.marginLeft = '';
-      }
+    if ((width / height) < aspect) {
+      banner.style.height = height + 'px';
+      banner.style.marginTop = '';
+      banner.style.width = '';
+      banner.style.marginLeft = ((width - (aspect * height)) / 2) + 'px';
+    } else {
+      banner.style.height = '';
+      banner.style.marginTop = ((height - (width / aspect)) / 2) + 'px';
+      banner.style.width = width + 'px';
+      banner.style.marginLeft = '';
     }
   }
 
   function resize () {
-    updateBanner();
     selectLogoText();
+
+    if (banner) {
+      updateBanner();
+    }
   }
 
   window.onresize = resize;

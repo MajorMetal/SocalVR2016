@@ -3,12 +3,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require plugins/smoothPageScroll
 //= require components/navbar
 //= require components/footer
 //= require components/resize/mobile
+//= require components/scroll/mobile
 
 document.addEventListener('DOMContentLoaded', function () {
 	navbarController();
 	footerController();
   resizeController();
+  scrollController();
 });

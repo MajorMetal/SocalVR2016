@@ -1,0 +1,44 @@
+.container-full,
+.container{
+  position:relative;
+  width:calc(100% - 16px);
+  margin:8px auto;
+  padding:16px 16px;
+  background-color:#FFF;
+  z-index:50;
+  @include box-shadow(0 2px 6px rgba(#000,.26));
+
+  @include tablet{
+    padding:32px 16px
+  }
+
+  @include desktop-sm{
+    padding:48px 16px
+  }
+}
+
+.container{
+  max-width:1000px
+}
+
+.text-block{
+  margin:0 auto;
+
+  .section:not(:first-child){
+    margin-top:35px
+  }
+
+  .section{
+    h6{
+      margin-bottom:0;
+      
+      p{
+        display:inline-block
+      }
+    }
+  }
+
+  @include tablet{
+    max-width:750px
+  }
+}
