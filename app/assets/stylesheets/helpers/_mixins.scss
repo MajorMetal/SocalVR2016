@@ -1,111 +1,89 @@
-// =========================
-//    Media Query Mixins
-// =========================
+/*=========================
+    Media Query Mixins
+=========================*/
 @mixin phone{
   @media (max-width:($width-xs-cutoff - 1px)){
-    @content
-  }
-}
+    @content }
+} // end 'phone'
 
 @mixin landscape{
   @media (max-width:($width-xs-cutoff - 1px)) and (orientation:landscape){
-    @content
-  }
-}
+    @content }
+} // end 'landscape'
 
 @mixin tablet{
   @media (min-width:$width-xs-cutoff){
-    @content
-  }
-}
+    @content }
+} // end 'tablet'
 
 @mixin handheld{
   @media (max-width:($width-sm-cutoff - 1px)){
-    @content
-  }
-}
+    @content }
+} // end 'handheld'
 
 @mixin desktop-sm{
 	@media (min-width:$width-sm-cutoff){
-    @content
-  }
-}
+    @content }
+} // end 'desktop-sm'
 
 @mixin desktop-lg{
   @media (min-width:$width-md-cutoff){
-    @content
-  }
-}
+    @content }
+} // end 'desktop-lg'
 
 
-// =========================
-//      Modifier Mixins
-// =========================
+/*=========================
+      Modifier Mixins
+=========================*/
+@mixin box-sizing($sizing...){
+  -webkit-box-sizing:$sizing;
+     -moz-box-sizing:$sizing;
+          box-sizing:$sizing }
+
 @mixin transition($transition...){
 	-webkit-transition:$transition;
-          transition:$transition
-}
+          transition:$transition }
 
 @mixin transform($transform...){
 	-webkit-transform:$transform;
       -ms-transform:$transform;
-          transform:$transform
-}
+          transform:$transform }
 
-@mixin box-shadow($box-shadow...){
-  -webkit-box-shadow:$box-shadow;
-     -moz-box-shadow:$box-shadow;
-          box-shadow:$box-shadow
-}
+@mixin box-shadow($shadow...){
+  -webkit-box-shadow:$shadow;
+     -moz-box-shadow:$shadow;
+          box-shadow:$shadow }
 
 @mixin animation($animation...){
   -webkit-animation:$animation;
-          animation:$animation
-}
+          animation:$animation }
 
-// =========================
-//        Grid System
-// =========================
+
+/*=========================
+        Grid System
+=========================*/
 @mixin build-columns($size, $columns){
   @for $i from $columns through 0 {
     $width: (100% / $columns) * $i;
 
     @if $i > 0 {
       .col-#{$size}-#{$i} {
-        width:$width
-      }
-
-      .col-#{$size}-pull-#{$i} {
-        right:$width
-      }
-
-      .col-#{$size}-push-#{$i} {
-        left:$width
-      }
+        width:$width }
 
       .col-#{$size}-offset-#{$i} {
-        margin-left:$width
-      }
+        margin-left:$width }
 
     } @else {
-      .col-#{$size}-pull-#{$i} {
-        right:auto
-      }
-
-      .col-#{$size}-push-#{$i} {
-        left:auto
-      }
-
       .col-#{$size}-offset-#{$i} {
-        margin-left:0
-      }
-    }
-  }
-}
+        margin-left:0 }
+    } // end conditional
+  } // end for loop
+} // end mixin
 
-// =========================
-//        Grid System
-// =========================
+
+/*=========================
+        Hamburger
+=========================*/
 @mixin hamburger(){
   &,
   &:before,
@@ -115,8 +93,7 @@
     height:3px;
     width:24px;
     background-color:#000;
-    background-color:rgba(#000,.75)
-  }
+    background-color:rgba(#000,.75) }
 
   &{
     top:26px;
@@ -124,20 +101,19 @@
 
     @include tablet{
       top:30px;
-      left:18px
-    }
-  }
+      left:18px }
+
+  } //  end 'root'
 
   &:before,
   &:after{
-    content:''
-  }
+    content:'' }
 
   &:before{
-    top:-6px
-  }
+    top:-6px }
 
   &:after{
-    top:6px
-  }
-}
+    top:6px }
+
+} // end 'hamburger'
+

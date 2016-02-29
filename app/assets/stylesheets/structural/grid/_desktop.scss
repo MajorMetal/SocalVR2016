@@ -1,4 +1,4 @@
-@import 'structural/grid/mobile';
+@import 'structural/grid/main';
 
 @include desktop-sm{
   .col-lg-1,
@@ -13,8 +13,11 @@
   .col-lg-10,
   .col-lg-11,
   .col-lg-12{
-    float:left
-  }
+    position:relative;
+    float:left;
+    padding-right:16px;
+    padding-left:16px }
 
   @include build-columns(lg, 12);
-}
+} // end 'desktop-sm'
+

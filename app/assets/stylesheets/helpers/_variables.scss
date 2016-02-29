@@ -1,15 +1,17 @@
-// =========================
-// 		Media Query Sizes
-// =========================
+/*=========================
+ 		Media Query Sizes
+=========================*/
 $width-xs-cutoff:768px;
 $width-sm-cutoff:992px;
 $width-md-cutoff:1200px;
 
 
-// =========================
-// 					Colors
-// =========================
-// ==~~~== Orange (Main) ==~~~==
+/*=========================
+ 					Colors
+=========================*/
+
+/*     Orange (Main)
+-------------------------*/
 $orange-100:#FFCCBC;
 $orange-200:#FFAB91;
 $orange-300:#FF8A65;
@@ -19,13 +21,16 @@ $orange-600:#F4511E;
 $orange-700:#E64A19;
 $orange-800:#D84315;
 $orange-900:#BF360C;
-// ==~~~== Orange (Accent) ==~~~==
+
+/*    Orange (Accent)
+-------------------------*/
 $orange-accent-100:#FF9E80;
 $orange-accent-200:#FF6E40;
 $orange-accent-400:#FF3D00;
 $orange-accent-700:#DD2C00;
 
-// ==~~~== Gray (Main) ==~~~==
+/*      Gray (Main)
+-------------------------*/
 $gray-50:#FAFAFA;
 $gray-100:#F5F5F5;
 $gray-200:#EEEEEE;
@@ -33,6 +38,8 @@ $gray-300:#E0E0E0;
 $gray-400:#BDBDBD;
 $gray-900:#212121;
 
-// ==~~~== Brand Colors ==~~~==
+/*      Brand Colors
+-------------------------*/
 $twitter:#00ACED;
 $facebook:#3B5998;
+

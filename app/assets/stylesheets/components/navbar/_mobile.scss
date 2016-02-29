@@ -2,20 +2,17 @@
 
 @include landscape{
   .navbar{
-    height:48px
-  }
+    height:48px }
 
 
   /*=========================
          Navbar Toggle
   =========================*/
   .navbar-toggle-open{
-    padding:24px
-  }
+    padding:24px }
 
   .hamburger{
-    top:22px
-  }
+    top:22px }
 
 
   /*=========================
@@ -25,15 +22,14 @@
     &,
     img,
     p{
-      height:48px
-    }
+      height:48px }
 
     img{
-      padding:4px 0
-    }
+      padding:4px 0 }
 
     p{
-      line-height:48px
-    }
-  }
-}
+      line-height:48px }
+
+  } // end '.navbar-logo'
+} // end 'landscape'
+

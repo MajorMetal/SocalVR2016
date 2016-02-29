@@ -1,22 +1,26 @@
 %nav.navbar
+  %label.sr{for: 'navbar-toggle'} Toggle navigation
   %input.navbar-toggle#navbar-toggle{type: 'checkbox'}
   %label.navbar-toggle-open{for: 'navbar-toggle'}
     .hamburger
   %label.navbar-toggle-close{for: 'navbar-toggle'}
-  %label.sr-only Toggle navigation
 
   = render 'layouts/partials/logo'
+  
   .navbar-menu
     = render 'layouts/partials/logo'
 
-    %ul.navbar-nav
-      %li.navbar-link= link_to 'Home', root_path
-      %li.navbar-link= link_to 'Expo', expo_path
-      %li.navbar-link= link_to 'Maps', maps_path
-      %li.navbar-link= link_to 'Exhibitors', exhibitors_path
-      %li.navbar-link= link_to 'Speakers', speakers_path
-      %li.navbar-link= link_to 'Sponsors', sponsors_path
-      %li.navbar-link= link_to 'Team', workers_path
-      %li.navbar-link
+    %ul
+      %li= link_to 'Home', root_path
+      %li= link_to 'Expo', expo_path
+      %li= link_to 'Maps', maps_path
+      %li= link_to 'Exhibitors', exhibitors_path
+      %li= link_to 'Speakers', speakers_path
+      %li= link_to 'Sponsors', sponsors_path
+      %li= link_to 'Team', workers_path
+      %li
         %a{href: 'https://www.eventbrite.com/e/the-socal-virtual-reality-conference-expo-tickets-17219851038', target: '_blank'}
           Register
+
+    .menu-footer
+      %p Powered by Monster VR

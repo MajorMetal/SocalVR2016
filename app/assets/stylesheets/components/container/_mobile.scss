@@ -1,1 +1,8 @@
 @import 'components/container/main';
+
+@include landscape{
+  .main{
+    padding-top:48px }
+
+} // end 'landscape'
+

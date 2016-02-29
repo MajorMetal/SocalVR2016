@@ -1,32 +1,36 @@
-// This is a manifest file that'll be compiled into desktop.css,
-// which will include all the files listed below.
-
-// =========================
-//    Vendor Stylesheets
-// =========================
+// This is a manifest file that'll be compiled into desktop.css, which will include all the files listed below.
+/*=========================
+          Vendor
+=========================*/
 @import 'normalize';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// =========================
-//    Helpers Stylesheets
-// =========================
+
+/*=========================
+          Helpers
+=========================*/
 @import 'helpers/fonts';
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/animations';
+@import 'helpers/classes';
 
-// =========================
-//        Structural
-// =========================
+
+/*=========================
+        Structural
+=========================*/
 @import 'structural/typography/desktop';
 @import 'structural/grid/desktop';
+@import 'structural/page/desktop';
 
-// =========================
-//        Components
-// =========================
-@import 'global/desktop';
-@import 'components/navbar/desktop';
-@import 'components/banner/desktop';
+
+/*=========================
+        Components
+=========================*/
+@import 'components/button/desktop';
+@import 'components/image/desktop';
 @import 'components/container/desktop';
+@import 'components/navbar/desktop';
 @import 'components/footer/desktop';
+

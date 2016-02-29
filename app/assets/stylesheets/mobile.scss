@@ -1,33 +1,36 @@
-/*
- * This is a manifest file that'll be compiled into mobile.css, which will include all the files listed below.
-*/
-
-// =========================
-//    Vendor Stylesheets
-// =========================
+// This is a manifest file that'll be compiled into mobile.css, which will include all the files listed below.
+/*=========================
+          Vendor
+=========================*/
 @import 'normalize';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// =========================
-//    Helpers Stylesheets
-// =========================
+
+/*=========================
+          Helpers
+=========================*/
 @import 'helpers/fonts';
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/animations';
+@import 'helpers/classes';
 
-// =========================
-//        Structural
-// =========================
+
+/*=========================
+        Structural
+=========================*/
 @import 'structural/typography/mobile';
 @import 'structural/grid/mobile';
+@import 'structural/page/mobile';
 
-// =========================
-//        Components
-// =========================
-@import 'global/mobile';
+
+/*=========================
+        Components
+=========================*/
+@import 'components/button/mobile';
+@import 'components/image/mobile';
+@import 'components/container/mobile';
 @import 'components/navbar/mobile';
-@import 'components/banner/mobile';
-@import 'components/container/desktop';
 @import 'components/footer/mobile';
+

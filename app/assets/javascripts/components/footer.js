@@ -6,6 +6,7 @@ var footerController = (function () {
 // =========================
 //     Element Creators
 // =========================
+  // Ripple used for click animations
   function createRipple (xPos, yPos, width) {
     var element = document.createElement('span');
 
@@ -42,6 +43,6 @@ var footerController = (function () {
 //      Event Listeners
 // =========================
   for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('mousedown', onMouseDownHandler);
+    addEvent(links[i], 'mousedown', onMouseDownHandler);
   }
 });

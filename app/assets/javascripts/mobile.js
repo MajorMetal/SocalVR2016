@@ -1,17 +1,15 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file that'll be compiled into mobile.js, which will include all the files
 // listed below.
 //
 //= require jquery
 //= require jquery_ujs
-//= require plugins/smoothPageScroll
+//= require helpers/main
+//= require helpers/resize/mobile
 //= require components/navbar
 //= require components/footer
-//= require components/resize/mobile
-//= require components/scroll/mobile
 
 document.addEventListener('DOMContentLoaded', function () {
-	navbarController();
-	footerController();
   resizeController();
-  scrollController();
+  navbarController();
+  footerController();
 });

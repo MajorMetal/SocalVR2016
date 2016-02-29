@@ -1,0 +1,42 @@
+.row{
+  margin-right:-16px;
+  margin-left:-16px }
+
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8{
+  position:relative;
+  padding-right:16px;
+  padding-left:16px }
+
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4{
+  float:left }
+
+@include build-columns(sm, 4);
+
+@include tablet{
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8{
+    float:left }
+
+  @include build-columns(md, 8);
+} // end 'tablet'
+

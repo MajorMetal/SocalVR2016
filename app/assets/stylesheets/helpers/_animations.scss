@@ -1,46 +1,48 @@
-// =========================
-//      Link Animations
-// =========================
+/*=========================
+     Button Animations
+=========================*/
+
+/*     Button Click
+-------------------------*/
 @keyframes buttonClick{
   from{
     opacity:0;
-    @include transform(scale(0,0))
-  }
+    @include transform(scale(0,0)) }
 
   30%{
-    opacity:.26
-  }
+    opacity:.26 }
 
   to{
     opacity:0;
-    @include transform(scale(1,1))
-  }
-}
+    @include transform(scale(1,1)) }
 
+} // end 'buttonClick'
+
+/*     Button Focus
+-------------------------*/
 @keyframes buttonFocus{
   from{
-    @include transform(scale(1,1))
-  }
+    @include transform(scale(1,1)) }
 
   50%{
-    @include transform(scale(.95,1))
-  }
+    @include transform(scale(.95,1)) }
 
   to{
-    @include transform(scale(1,1))
-  }
-}
+    @include transform(scale(1,1)) }
 
+} // end 'buttonFocus'
+
+/*   Round Button Focus
+-------------------------*/
 @keyframes roundButtonFocus{
   from{
-    @include transform(scale(1,1))
-  }
+    @include transform(scale(1,1)) }
 
   50%{
-    @include transform(scale(.925,.925))
-  }
+    @include transform(scale(.925,.925)) }
 
   to{
-    @include transform(scale(1,1))
-  }
-}
+    @include transform(scale(1,1)) }
+
+} // end 'roundButtonFocus'
+

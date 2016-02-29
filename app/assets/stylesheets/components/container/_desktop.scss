@@ -1,1 +1,8 @@
 @import 'components/container/main';
+
+@include desktop-sm{
+  .container{
+    padding:48px }
+
+} // end 'dekstop-sm'
+
